@@ -11,15 +11,17 @@
         <releaseNotes>Initial test release</releaseNotes>
         <copyright>MIT copyright license</copyright>
         <tags>Geocoder, Bing, Google, MapQuest, Nokia</tags>
+        <dependencies>
+            <dependency id="RestSharp" version="105.2.3" />
+            <dependency id="NLog" version="4.2.3" />
+        </dependencies>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5.2" />
         </frameworkAssemblies>
-		<dependencies>
-			<dependency id="RestSharp" version="105.2.3" />
-			<dependency id="NLog" version="4.2.3" />
-		</dependencies> 		
     </metadata>
     <files>
-        <file src="..\src\Geocoder\bin\Release\geo.coder.dll" target="lib\net452\geo.coder.dll" />
+        <file src="lib\net452\geo.coder.dll" target="lib\net452\geo.coder.dll" />
+        <file src="lib\net452\geo.formats.dll" target="lib\net452\geo.formats.dll" />
+        <file src="lib\net452\geo.keys.dll" target="lib\net452\geo.keys.dll" />
     </files>
 </package>
