@@ -67,6 +67,16 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeoAPIKeys\GeoKeys.csproj">
+      <Project>{4c54e338-e77d-4ead-9823-8e6e63bb1f8f}</Project>
+      <Name>GeoKeys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeoFormats\GeoFormats.csproj">
+      <Project>{7ec6a1af-4b5c-4b88-9ae0-ce653661ec55}</Project>
+      <Name>GeoFormats</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MultiGeocoder</id>
+        <version>0.0.0.1</version>
+        <authors>Silicon Rob</authors>
+        <licenseUrl>https://github.com/Siliconrob/MultiGeocoder/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/Siliconrob/MultiGeocoder/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Library for making calls to multiple public geocoding API services.</description>
+        <releaseNotes>Initial test release</releaseNotes>
+        <copyright>MIT copyright license</copyright>
+        <tags>Geocoder, Bing, Google, MapQuest, Nokia</tags>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5.2" />
+        </frameworkAssemblies>
+		<dependencies>
+			<dependency id="RestSharp" version="105.2.3" />
+			<dependency id="NLog" version="4.2.3" />
+		</dependencies> 		
+    </metadata>
+    <files>
+        <file src="..\src\Geocoder\bin\Release\geo.coder.dll" target="lib\net452\geo.coder.dll" />
+    </files>
+</package>
