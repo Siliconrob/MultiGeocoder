@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NLog;
-using ServiceStack.Text;
 
 namespace Geo.Coder
 {
@@ -138,24 +137,4 @@ namespace Geo.Coder
       }
     }
   }
-
-  public static class ListExtensions
-  {
-    public static T FirstSafe<T>(this IEnumerable<T> currentList) where T : new()
-    {
-      var empty = new T();
-      var actualItems = currentList ?? new List<T>();
-      if (!actualItems.Any())
-      {
-        return empty;
-      }
-      var emptyItem = empty.ToJson();
-      foreach (var item in actualItems.Where(item => item != null).Where(item => !string.Equals(item.ToJson(), emptyItem)))
-      {
-        return item;
-      }
-      return empty;
-    }
-  }
-
 }

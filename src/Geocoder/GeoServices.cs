@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Geo.Coder.GeocodeServices;
 using Geo.Formats.JSON.Bing;
 using Geo.Formats.JSON.Google;
 using Geo.Formats.JSON.MapQuest;
 using Geo.Formats.JSON.Nokia;
+using System.Linq;
 using Geo.Keys;
+using Newtonsoft.Json;
 using NLog;
-using ServiceStack.Text;
 
 namespace Geo.Coder
 {
@@ -33,6 +33,7 @@ namespace Geo.Coder
     {
       var g = new NokiaGeoCoder();
       var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Api.Nokia.Key, App = Api.Nokia.Id});
+
       var data =  jsonContent.FromJson<NokiaJson>();
       var result = data.Response.View.FirstSafe() ?? new View
       {
@@ -103,4 +104,18 @@ namespace Geo.Coder
       return string.Format(LatLngFmt, freeFormAddress, latlng.FirstOrDefault(), latlng.LastOrDefault());
     }
   }
+
+  public static class StringExtensions
+  {
+    public static T FromJson<T>(this string jsonContent)
+    {
+      return JsonConvert.DeserializeObject<T>(jsonContent);
+    }
+
+    public static string ToJson<T>(this T input)
+    {
+      return JsonConvert.SerializeObject(input);
+    }
+  }
+
 }

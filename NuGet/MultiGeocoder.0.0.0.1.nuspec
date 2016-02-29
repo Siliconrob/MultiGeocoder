@@ -14,10 +14,8 @@
         <dependencies>
             <dependency id="RestSharp" version="105.2.3" />
             <dependency id="NLog" version="4.2.3" />
+			<dependency id="Newtonsoft.Json" version="8.0.1" />
         </dependencies>
-        <frameworkAssemblies>
-            <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5.2" />
-        </frameworkAssemblies>
     </metadata>
     <files>
         <file src="lib\net452\geo.coder.dll" target="lib\net452\geo.coder.dll" />
