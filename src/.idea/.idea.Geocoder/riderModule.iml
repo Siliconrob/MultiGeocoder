@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.Config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.exe" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.targets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../AppRunner" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GeoAPIKeys" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Geocoder" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GeoFormats" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../AppRunner/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../AppRunner/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeoAPIKeys/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeoAPIKeys/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeoFormats/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../GeoFormats/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Geocoder/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Geocoder/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../tests/GeoTests">
+      <sourceFolder url="file://$MODULE_DIR$/../../../tests/GeoTests" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../tests/GeoTests/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../tests/GeoTests/obj" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

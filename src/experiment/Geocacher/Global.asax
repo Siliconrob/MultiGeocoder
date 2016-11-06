@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="SGSI.Geocoder.Global" Language="C#" %>
