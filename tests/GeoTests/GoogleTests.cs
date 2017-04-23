@@ -1,10 +1,12 @@
-﻿using NUnit.Framework;
+﻿
+
+using Xunit;
 
 namespace Geo.Tests
 {
   public static class GoogleTests
   {
-    [Test]
+    [Fact]
     public static void FindFortWorth()
     {
     }

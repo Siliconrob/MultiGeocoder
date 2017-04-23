@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 
 namespace Geo.Tests
 {
   public static class NokiaTests
   {
-    [Test]
+    [Fact]
     public static void FindFortWorth()
     {
     }
