@@ -4,8 +4,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using Geocoder.GeocodeServices;
-
 using NLog;
 
 namespace Geo.Coder.GeocodeServices

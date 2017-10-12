@@ -5,8 +5,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 
-using Geocoder.GeocodeServices;
-
 using NLog;
 
 namespace Geo.Coder.GeocodeServices

@@ -7,11 +7,9 @@ using Geo.Formats.JSON.Google;
 using Geo.Formats.JSON.MapQuest;
 using Geo.Formats.JSON.Nokia;
 using System.Linq;
-using Geo.Keys;
 
-using GeoKeys;
+using Geo.Options;
 
-using Newtonsoft.Json;
 using NLog;
 
 namespace Geo.Coder
@@ -35,7 +33,7 @@ namespace Geo.Coder
     public static async Task<string> Nokia(string freeFormAddress)
     {
       var g = new NokiaGeoCoder();
-      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Api.NokiaApiOptions.Key, App = Api.NokiaApiOptions.Id});
+      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Options.Options.NokiaKey, App = Options.Options.NokiaId});
 
       var data =  jsonContent.FromJson<NokiaJson>();
       var result = data.Response.View.FirstSafe() ?? new View
@@ -74,7 +72,7 @@ namespace Geo.Coder
     public static async Task<string> MapQuest(string freeFormAddress)
     {
       var g = new MapQuestGeoCoder();
-      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Api.ApiOptions.Mapquest});
+      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Options.Options.Mapquest});
       var data = jsonContent.FromJson<MapQuestJson>();
 
       var result = data.Results.FirstSafe() ?? new Formats.JSON.MapQuest.Result
@@ -91,7 +89,7 @@ namespace Geo.Coder
     public static async Task<string> Bing(string freeFormAddress)
     {
       var g = new BingGeoCoder();
-      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Api.ApiOptions.Bing});
+      var jsonContent = await g.Find(new ApiGeocodeQuery {Q = freeFormAddress, Key = Options.Options.Bing});
       var data = jsonContent.FromJson<BingJson>();
       var foundResource = data.ResourceSets.FirstSafe().Resources.FirstSafe() ?? new Resource
       {
@@ -107,18 +105,4 @@ namespace Geo.Coder
       return string.Format(LatLngFmt, freeFormAddress, latlng.FirstOrDefault(), latlng.LastOrDefault());
     }
   }
-
-  public static class StringExtensions
-  {
-    public static T FromJson<T>(this string jsonContent)
-    {
-      return JsonConvert.DeserializeObject<T>(jsonContent);
-    }
-
-    public static string ToJson<T>(this T input)
-    {
-      return JsonConvert.SerializeObject(input);
-    }
-  }
-
 }

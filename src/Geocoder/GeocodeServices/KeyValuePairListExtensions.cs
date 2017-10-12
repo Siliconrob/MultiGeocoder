@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 
-namespace Geocoder.GeocodeServices
+namespace Geo.Coder.GeocodeServices
 {
 	public static class KeyValuePairListExtensions
 	{
