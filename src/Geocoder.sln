@@ -1,14 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRunner", "AppRunner\AppRunner.csproj", "{700188F9-680F-47B8-8839-E5879BA44D13}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geocoder", "Geocoder\Geocoder.csproj", "{42E607C8-2156-4617-A5DC-14AA0A7ABB11}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoFormats", "GeoFormats\GeoFormats.csproj", "{7EC6A1AF-4B5C-4B88-9AE0-CE653661EC55}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9C20D46E-84B0-4EAC-AE5A-28B5CAF41B73}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -16,9 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9C20D4
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoKeys", "GeoAPIKeys\GeoKeys.csproj", "{4C54E338-E77D-4EAD-9823-8E6E63BB1F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoKeys", "GeoAPIKeys\GeoKeys.csproj", "{A9B4BD90-E036-4377-B4F1-77561944564C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTests", "..\tests\GeoTests\GeoTests.csproj", "{3F4E9B22-E3AB-42B2-8729-C84C33706D02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geocoder", "Geocoder\Geocoder.csproj", "{0D5449A5-839D-40CB-9D8B-8EB8FA9474F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoFormats", "GeoFormats\GeoFormats.csproj", "{CD2CD4D3-04EA-44C4-B3EC-E20A2B314A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppRunner", "AppRunner2\AppRunner.csproj", "{19D01B16-9B78-4632-A43E-E892E69DFB66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTests", "GeoTests2\GeoTests.csproj", "{6A739E2D-1E39-4BB0-A918-9B1C93FD7939}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,28 +26,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{700188F9-680F-47B8-8839-E5879BA44D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{700188F9-680F-47B8-8839-E5879BA44D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{700188F9-680F-47B8-8839-E5879BA44D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{700188F9-680F-47B8-8839-E5879BA44D13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42E607C8-2156-4617-A5DC-14AA0A7ABB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42E607C8-2156-4617-A5DC-14AA0A7ABB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42E607C8-2156-4617-A5DC-14AA0A7ABB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42E607C8-2156-4617-A5DC-14AA0A7ABB11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EC6A1AF-4B5C-4B88-9AE0-CE653661EC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EC6A1AF-4B5C-4B88-9AE0-CE653661EC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EC6A1AF-4B5C-4B88-9AE0-CE653661EC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EC6A1AF-4B5C-4B88-9AE0-CE653661EC55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C54E338-E77D-4EAD-9823-8E6E63BB1F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C54E338-E77D-4EAD-9823-8E6E63BB1F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C54E338-E77D-4EAD-9823-8E6E63BB1F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C54E338-E77D-4EAD-9823-8E6E63BB1F8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F4E9B22-E3AB-42B2-8729-C84C33706D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F4E9B22-E3AB-42B2-8729-C84C33706D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F4E9B22-E3AB-42B2-8729-C84C33706D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F4E9B22-E3AB-42B2-8729-C84C33706D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B4BD90-E036-4377-B4F1-77561944564C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B4BD90-E036-4377-B4F1-77561944564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B4BD90-E036-4377-B4F1-77561944564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B4BD90-E036-4377-B4F1-77561944564C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5449A5-839D-40CB-9D8B-8EB8FA9474F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5449A5-839D-40CB-9D8B-8EB8FA9474F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5449A5-839D-40CB-9D8B-8EB8FA9474F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5449A5-839D-40CB-9D8B-8EB8FA9474F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2CD4D3-04EA-44C4-B3EC-E20A2B314A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2CD4D3-04EA-44C4-B3EC-E20A2B314A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2CD4D3-04EA-44C4-B3EC-E20A2B314A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2CD4D3-04EA-44C4-B3EC-E20A2B314A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D01B16-9B78-4632-A43E-E892E69DFB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D01B16-9B78-4632-A43E-E892E69DFB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D01B16-9B78-4632-A43E-E892E69DFB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D01B16-9B78-4632-A43E-E892E69DFB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A739E2D-1E39-4BB0-A918-9B1C93FD7939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A739E2D-1E39-4BB0-A918-9B1C93FD7939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A739E2D-1E39-4BB0-A918-9B1C93FD7939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A739E2D-1E39-4BB0-A918-9B1C93FD7939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74C623EC-F7AF-48E7-ABD7-6282A8BD81C8}
 	EndGlobalSection
 EndGlobal

@@ -1,48 +1,59 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
+
+using Geocoder.GeocodeServices;
+
 using NLog;
-using RestSharp;
 
 namespace Geo.Coder.GeocodeServices
 {
-  public class GoogleGeoCoder : IGeocode
-  {
-    private readonly Logger _log;
+	public class GoogleGeoCoder : IGeocode
+	{
+		private readonly Logger _log;
 
-    public GoogleGeoCoder()
-    {
-      _log = LogManager.GetLogger(nameof(GoogleGeoCoder));
-    }
 
-    public string BaseUrl => @"https://maps.googleapis.com";
+		public GoogleGeoCoder()
+		{
+			this._log = LogManager.GetLogger(nameof(GoogleGeoCoder));
+		}
 
-    public string GeoCodeRestUrl => @"maps/api/geocode/{0}";
 
-    public async Task<string> Find(ApiGeocodeQuery queryParams)
-    {
-      var watch = Stopwatch.StartNew();
-      var client = new RestClient(BaseUrl);
+		public string BaseUrl => @"https://maps.googleapis.com";
 
-      var googleQuery = new
-      {
-        address = queryParams.Q,
-        sensor = false.ToString().ToLowerInvariant()
-      };
+		public string GeoCodeRestUrl => @"maps/api/geocode/json";
 
-      var request = new RestRequest(string.Format(GeoCodeRestUrl, OutputFormats.Json));
-      request.AddObject(googleQuery);
 
-      _log.Debug("Request constructed '{0}' {1} milliseconds", client.BuildUri(request), watch.ElapsedMilliseconds);
-      var geoResponse = await client.ExecuteAsGet(request, HttpMethods.Get).GetTaskResult();
-      _log.Debug("Geocode response: {0}", geoResponse.Content);
+		public async Task<string> Find(ApiGeocodeQuery queryParams)
+		{
+			var watch = Stopwatch.StartNew();
 
-      return geoResponse.Content;
-    }
-  }
+			var client = new HttpClient { BaseAddress = new Uri(BaseUrl) };
+			var query = new List<KeyValuePair<string, string>>
+			{
+				new KeyValuePair<string, string>("address", queryParams.Q),
+				new KeyValuePair<string, string>("sensor", "false")
+			}.ToQueryString();
+			var request = new HttpRequestMessage(HttpMethod.Get, GeoCodeRestUrl + query);
+			
+			
 
-  public static class OutputFormats
-  {
-    public const string Json = @"json";
-    public const string Xml = @"xml";
-  }
+			this._log.Debug("Request constructed '{0}' {1} milliseconds", watch.ElapsedMilliseconds);
+
+			var geoResponse = await client.SendAsync(request).ConfigureAwait(false);
+
+			var responseString = await geoResponse.Content.ReadAsStringAsync();
+			this._log.Debug("Geocode response: {0}", responseString);
+
+			return responseString;
+		}
+	}
+
+	public static class OutputFormats
+	{
+		public const string Json = @"json";
+		public const string Xml = @"xml";
+	}
 }
