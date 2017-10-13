@@ -21,7 +21,7 @@ namespace Geo.Coder
             var geoResult = await geocode(freeFormAddress);
             results.Enqueue(geoResult);
           }
-          catch (ApplicationException ae)
+          catch (Exception ae)
           {
             var log = LogManager.GetLogger(nameof(Batch));
             log.Error("Geocode failure {0}{1}", Environment.NewLine, ae.Message);
