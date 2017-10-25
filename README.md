@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Siliconrob/MultiGeocoder/tree/master.svg?style=svg)](https://circleci.com/gh/Siliconrob/MultiGeocoder/tree/master)
+[![Build Status](https://travis-ci.org/Siliconrob/MultiGeocoder.svg?branch=master)](https://travis-ci.org/Siliconrob/MultiGeocoder)
 
 Examples
 --------
