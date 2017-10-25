@@ -4,4 +4,4 @@ dotnet: 2.0.0
 before_install:
   - chmod +x build.sh
 script:
-  - ./build.sh
+  - ./scripts/build.sh
