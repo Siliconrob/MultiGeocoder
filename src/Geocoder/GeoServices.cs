@@ -7,9 +7,6 @@ using Geo.Formats.JSON.Google;
 using Geo.Formats.JSON.MapQuest;
 using Geo.Formats.JSON.Nokia;
 using System.Linq;
-
-using Geo.Options;
-
 using NLog;
 
 namespace Geo.Coder
@@ -23,9 +20,9 @@ namespace Geo.Coder
     {
       return new List<Func<string, Task<string>>>
       {
-        MapQuest,
-        Bing,
-        Google,
+        //MapQuest,
+        //Bing,
+        //Google,
         Nokia
       };
     }
